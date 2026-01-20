@@ -1,4 +1,4 @@
-P Cloud Run Job Label Update Script
+# Cloud Run Job Label Update Script
 
 This script is designed to list Cloud Run jobs in a specified environment (e.g., `prod`), clean up the output, and then update each job's labels with its name.
 
@@ -20,8 +20,9 @@ This script performs the following steps:
 ## Usage
 
 1. Clone or download this script to your local environment.
-2. Modify the `env` variable if you want to target a different environment (e.g., `staging`, `dev`).
-3. Run the script.
+2. Choose your environment folder: `dev/`, `pilot/`, `uat/`, or `prod/`
+3. Modify the `env` variable if you want to target a different environment.
+4. Run the script:
 
 ```bash
 #!/bin/bash
@@ -41,4 +42,27 @@ while read -r job_name; do
     --region=asia-south1 \
     --update-labels=cloud_run_job_name="$job_name"
 done < "$env.txt"
+```
+
+## Supported Environments
+
+- `dev` - Development environment
+- `pilot` - Pilot/Testing environment
+- `uat` - User Acceptance Testing environment
+- `prod` - Production environment
+
+## Environment-specific Directories
+
+Each subdirectory contains pre-configured scripts for that specific environment:
+- **dev/** - Scripts for development jobs
+- **pilot/** - Scripts for pilot jobs
+- **uat/** - Scripts for UAT jobs
+- **prod/** - Scripts for production jobs
+
+## Notes
+
+- Always review the generated `.txt` file before running the update command
+- The script filters jobs by environment name in the job listing
+- Test in non-production environments first
+- Ensure you have the appropriate GCP IAM permissions before running these scripts
 

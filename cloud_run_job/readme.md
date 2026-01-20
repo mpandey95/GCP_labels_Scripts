@@ -66,3 +66,14 @@ Each subdirectory contains pre-configured scripts for that specific environment:
 - Test in non-production environments first
 - Ensure you have the appropriate GCP IAM permissions before running these scripts
 
+👨‍💻 Author
+Manish Pandey Cloud | DevOps | Platform Engineer
+
+🔗 GitHub: https://github.com/mpandey95
+💼 LinkedIn: https://www.linkedin.com/in/manish-pandey95
+
+⭐ Contributing
+Contributions are welcome! Feel free to open issues or submit PRs to improve the script.
+
+📜 License
+MIT License – free to use, modify, and distribute.
